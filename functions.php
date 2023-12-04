@@ -46,3 +46,25 @@ function get_child_pages( $number = -1 ) {
     $child_pages = new WP_Query($args);
     return $child_pages;
 }
+
+
+// アイキャッチを利用できるようにする
+add_theme_support( 'post-thumbnails' );
+
+// トップページのメイン画像用サイズ設定
+add_image_size( 'top', 1077, 622, true );
+
+// 地域貢献活動一覧用の画像サイズ
+add_image_size( 'contribution', 557, 280, true );
+
+// トップページ>地域貢献活動で使用する画像サイズ
+add_image_size( 'front-contribution', 255, 189, true );
+
+// 企業情報一覧、店舗情報一覧の画像サイズ
+add_image_size( 'common', 465, 252, true );
+
+// 各ページのメイン画像用サイズ
+add_image_size( 'detail', 1100, 330, true );
+
+// 検索一覧の画像サイズ
+add_image_size( 'search', 168, 168, true );
