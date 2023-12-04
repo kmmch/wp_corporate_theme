@@ -118,7 +118,7 @@ endif;
 <section class="section-contents" id="company">
   <div class="wrapper">
 <?php
-$post = get_page_by_path( ,'company' );
+$post = get_page_by_path( 'company' );
 setup_postdata( $post );
 ?>
     <span class="section-title-en">Corporate Information</span>
