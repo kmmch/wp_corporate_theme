@@ -68,3 +68,15 @@ add_image_size( 'detail', 1100, 330, true );
 
 // 検索一覧の画像サイズ
 add_image_size( 'search', 168, 168, true );
+
+
+// 各テンプレートごとのメイン画像を表示
+function get_main_image() {
+    if(is_page(  )) {
+        return get_the_post_thumbnail( get_queried_object(  )->ID, 'detail' );
+    } elseif (is_category(  ) || is_singular( 'post' )) {
+        return '<img src="'. get_template_directory_uri(  ) . '/assets/images/bg-page-news.jpg" />';
+    } else {
+        return '<img src="'. get_template_directory_uri(  ) . '/assets/images/bg-page-dummy.jpg" />';
+    }
+}
