@@ -1,1 +1,1 @@
-<?php echo 'index'; ?>
+<?php
