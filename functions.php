@@ -25,6 +25,8 @@ function get_main_title() {
         return $category_obj[0]->name;
     } elseif(is_page(  )) {
         return get_the_title(  );
+    } elseif(is_category(  )) {
+        return single_cat_title(  );
     }
 
     return '';
