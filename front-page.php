@@ -11,7 +11,7 @@ $shop_title = get_the_title();
     <p class="section-lead"><?php.echo get_the_excerpt(  ); ?></p>
     <ul class="shops">
 <?php
-$shop_pages = get_child_pages(-1, get_the_ID(  ));
+$shop_pages = get_child_pages(4, get_the_ID(  ));
 if($shop_pages->have_posts()):
   while($shop_pages->have_posts()): $shop_pages->the_post();
 ?>
@@ -34,7 +34,7 @@ endif;
 ?>
     </ul>
     <div class="section-buttons">
-      <button type="button" class="button button-ghost" onclick="javascript:location.href = '#';">店舗情報一覧を見る</button>
+      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( home_url( 'shop' ) ); ?>';"><?php echo $shop_title; ?>一覧を見る</button>
     </div>
   </div>
 </section>
