@@ -16,7 +16,7 @@
     <header id="header">
       <div class="header-inner">
         <div class="logo">
-          <a class="logo-header" href="<?php echo esc_url( get_template_directory_uri() ); ?>">
+          <a class="logo-header" href="<?php echo home_url(); ?>">
             <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/common/logo-main.svg" class="main-logo" alt="PACIFIC MALL DEVELOPMENT" />
             <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/common/logo-fixed.svg" class="fixed-logo" alt="PACIFIC MALL DEVELOPMENT" />
           </a>
