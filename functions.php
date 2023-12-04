@@ -31,3 +31,18 @@ function get_main_title() {
 
     return '';
 }
+
+
+// 子ページを取得する関数
+function get_child_pages( $number = -1 ) {
+    $parent_id = get_the_ID(  );
+    $args = array(
+        'posts_per_page' => $number,
+        'post_type' => 'page',
+        'orderby' => 'menu_order',
+        'order' => 'ASC',
+        'post_parent' => $parent_id,
+    );
+    $child_pages = new WP_Query($args);
+    return $child_pages;
+}
