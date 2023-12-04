@@ -9,6 +9,7 @@ $shop_title = get_the_title();
     <span class="section-title-en">Shop Information</span>
     <h2 class="section-title"><?php the_title(  ); ?></h2>
     <p class="section-lead"><?php echo get_the_excerpt(  ); ?></p>
+<?php wp_reset_postdata(  ); ?>
     <ul class="shops">
 <?php
 $shop_pages = get_child_pages(4, get_the_ID(  ));
@@ -40,7 +41,7 @@ endif;
 </section>
 <section class="section-contents" id="contribution">
   <div class="wrapper">
-  <?php
+<?php
 $post = get_page_by_path( 'contribution' );
 setup_postdata( $post );
 $contribution_title = get_the_title();
@@ -76,8 +77,8 @@ endif;
 ?>
     </div>
     <div class="section-buttons">
-      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( home_url( 'shop' ) ); ?>';">
-        <?php echo $shop_title; ?>一覧を見る
+      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( home_url( 'contribution' ) ); ?>';">
+        <?php echo $contribution_title; ?>一覧を見る
       </button>
     </div>
   </div>
