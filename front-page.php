@@ -8,7 +8,7 @@ $shop_title = get_the_title();
 ?>
     <span class="section-title-en">Shop Information</span>
     <h2 class="section-title"><?php the_title(  ); ?></h2>
-    <p class="section-lead"><?php.echo get_the_excerpt(  ); ?></p>
+    <p class="section-lead"><?php echo get_the_excerpt(  ); ?></p>
     <ul class="shops">
 <?php
 $shop_pages = get_child_pages(4, get_the_ID(  ));
@@ -40,19 +40,28 @@ endif;
 </section>
 <section class="section-contents" id="contribution">
   <div class="wrapper">
+  <?php
+$post = get_page_by_path( 'contribution' );
+setup_postdata( $post );
+$contribution_title = get_the_title();
+?>
     <span class="section-title-en">Regional Contribution</span>
-    <h2 class="section-title">地域貢献活動</h2>
-    <p class="section-lead">人と地域を結ぶ活動を行っております</p>
+    <h2 class="section-title"><?php the_title(  ); ?></h2>
+    <p class="section-lead"><?php echo get_the_excerpt(  ); ?></p>
+<?php wp_reset_postdata(  ); ?>
     <div class="articles">
+<?php
+$contribution_pages = get_child_pages(3, get_the_ID(  ));
+if($contribution_pages->have_posts()):
+  while($contribution_pages->have_posts()): $contribution_pages->the_post();
+?>
       <article class="article-card">
-        <a class="card-link" href="#">
+        <a class="card-link" href="<?php the_permalink(  ); ?>">
           <div class="card-inner">
-            <div class="card-image">
-	            <img src="#" alt="" />
-            </div>
+            <div class="card-image"><?php the_post_thumbnail( 'front-contribution' ); ?></div>
             <div class="card-body">
-              <p class="title">街のちびっこダンス大会</p>
-              <p class="excerpt">2022年8月大手町モールにて「街のちびっこダンス大会」を開催しました。近年はダンス教室に通うお子様も多く、お子様同士や親御様同士の交流の場となればと思い企画いたしました。</p>
+              <p class="title"><?php the_title(  ); ?></p>
+              <p class="excerpt"><?php echo get_the_excerpt(  ); ?></p>
               <div class="buttonBox">
                 <button type="button" class="seeDetail">MORE</button>
               </div>
@@ -60,42 +69,15 @@ endif;
           </div>
         </a>
       </article>
-      <article class="article-card">
-        <a class="card-link" href="#">
-          <div class="card-inner">
-            <div class="card-image">
-	            <img src="#" alt="" />
-            </div>
-            <div class="card-body">
-              <p class="title">都市カンファレンス</p>
-              <p class="excerpt">新しい都市の構想を考える LAモールでは2022年8月20日、モール周辺のロサンゼルスの新しい都市構想について、モールにいらっしゃったお客様と考えるカンファレンスを開催いたしました。</p>
-              <div class="buttonBox">
-                <button type="button" class="seeDetail">MORE</button>
-              </div>
-            </div>
-          </div>
-        </a>
-      </article>
-      <article class="article-card">
-        <a class="card-link" href="#">
-          <div class="card-inner">
-            <div class="card-image">
-	            <img src="#" alt="" />
-            </div>
-            <div class="card-body">
-              <p class="title">タムリンフェスティバル</p>
-              <p class="excerpt">今年もタムリンフェスティバルは大盛況 2022年9月にインドネシアのタムリンホールにて「タムリンフェスティバル」を開催しました。</p>
-              <div class="buttonBox">
-                <button type="button" class="seeDetail">MORE</button>
-              </div>
-            </div>
-          </div>
-        </a>
-      </article>
+<?php
+  endwhile;
+  wp_reset_postdata();
+endif;
+?>
     </div>
     <div class="section-buttons">
-      <button type="button" class="button button-ghost" onclick="javascript:location.href = '#';">
-            地域貢献活動一覧を見る
+      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( home_url( 'shop' ) ); ?>';">
+        <?php echo $shop_title; ?>一覧を見る
       </button>
     </div>
   </div>
