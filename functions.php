@@ -10,7 +10,9 @@ add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 
 
 // ヘッダー、フッターのカスタムメニュー化
-register_nav_menusarray(
-    'place_global' => 'グローバル',
-    'place_footer' => 'フッターナビ'
+register_nav_menus( 
+    array(
+        'place_global' => 'グローバル',
+        'place_footer' => 'フッターナビ'
+    )
 );
