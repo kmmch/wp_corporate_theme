@@ -103,3 +103,15 @@ function get_specific_posts($post_type, $taxonomy = null, $term = null, $number 
     $specific_posts = new WP_Query($args);
     return $specific_posts;
 }
+
+
+// ページャーを関数化
+function page_navi() {
+    the_posts_pagination(
+        array(
+            'mid_size' => 2,
+            'prev_text' => '<',
+            'next_text' => '>',
+        )
+    );
+}
