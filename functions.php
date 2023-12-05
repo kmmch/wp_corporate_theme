@@ -121,3 +121,17 @@ function page_navi() {
         )
     );
 }
+
+
+// 抜粋文
+add_post_type_support( 'page', 'excerpt' );
+
+function cms_excerpt_more() {
+    return '...';
+}
+add_filter('excerpt_more', 'cms_excerpt_more');
+
+function cms_excerpt_length() {
+    return 80;
+}
+add_filter('excerpt_mblength', 'cms_excerpt_length');
