@@ -85,12 +85,13 @@ add_image_size( 'search', 168, 168, true );
 // 各テンプレートごとのメイン画像を表示
 function get_main_image() {
     if( is_page(  )|| is_singular( 'daily_contribution' ) ) {
-        return get_the_post_thumbnail( get_queried_object(  )->ID, 'detail' );        $attachment_id = get_field( 'main_image' );
-        // if ( is_front_page() ) {
-        //     return wp_get_attachment_image( $attachment_id, 'top' );
-        // } else {
-        //     return wp_get_attachment_image( $attachment_id, 'detail' );
-        // }
+        // return get_the_post_thumbnail( get_queried_object(  )->ID, 'detail' );        $attachment_id = get_field( 'main_image' );
+        $attachment_id = get_field( 'main_image' );
+        if ( is_front_page() ) {
+            return wp_get_attachment_image( $attachment_id, 'top' );
+        } else {
+            return wp_get_attachment_image( $attachment_id, 'detail' );
+        }
     } elseif (is_category(  ) || is_singular( 'post' )) {
         return '<img src="'. get_template_directory_uri(  ) . '/assets/images/bg-page-news.jpg" />';
     } elseif (is_search(  ) || is_404(  )) {
