@@ -1,5 +1,5 @@
 <article class="article-card">
-    <a class="card-link" href="<?php get_term_link( $term ); ?>">
+    <a class="card-link" href="<?php echo get_term_link( $term ); ?>">
         <div class="image">
             <img src="<?php echo get_template_directory_uri(  ); ?>/assets/images/bg-page-dummy.png" />
         </div>
