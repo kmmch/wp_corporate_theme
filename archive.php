@@ -13,6 +13,19 @@ if(have_posts(  )):
 endif;
 ?>
                       </div>
+                      <div class="pager">
+                        <ul class="pagerList">
+<?php
+the_posts_pagination(
+  array(
+    'mid_size' => 2,
+    'prev_text' => '<',
+    'next_text' => '>',
+  )
+);
+?>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
