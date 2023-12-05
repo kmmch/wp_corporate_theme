@@ -7,7 +7,7 @@ $post = $shop_obj;
 setup_postdata( $post );
 $shop_title = get_the_title();
 ?>
-    <span class="section-title-en">Shop Information</span>
+    <span class="section-title-en"><?php the_field('english_title'); ?></span>
     <h2 class="section-title"><?php the_title(  ); ?></h2>
     <p class="section-lead"><?php echo get_the_excerpt(  ); ?></p>
 <?php wp_reset_postdata(  ); ?>
@@ -22,7 +22,7 @@ if($shop_pages->have_posts()):
           <div class="shop-image"><?php the_post_thumbnail( 'common' ); ?></div>
           <div class="shop-body">
             <p class="name"><?php the_title(  ); ?></p>
-            <p class="location"></p>
+            <p class="location"><?php the_field('location'); ?></p>
             <div class="buttonBox">
               <button type="button" class="seeDetail">MORE</button>
             </div>
@@ -48,7 +48,7 @@ $post = $contribution_obj;
 setup_postdata( $post );
 $contribution_title = get_the_title();
 ?>
-    <span class="section-title-en">Regional Contribution</span>
+    <span class="section-title-en"><?php the_field('english_title'); ?></span>
     <h2 class="section-title"><?php the_title(  ); ?></h2>
     <p class="section-lead"><?php echo get_the_excerpt(  ); ?></p>
 <?php wp_reset_postdata(  ); ?>
@@ -88,7 +88,7 @@ endif;
 <section class="section-contents" id="news">
   <div class="wrapper">
 <?php $term_obj = get_term_by( 'slug', 'news', 'category' ); ?>
-    <span class="section-title-en">News Release</span>
+    <span class="section-title-en"><?php the_field('english_title'); ?></span>
     <h2 class="section-title"><?php echo $term_obj->name; ?></h2>
     <p class="section-lead"><?php echo $term_obj->description; ?></p>
     <ul class="news">
@@ -121,7 +121,7 @@ endif;
 $post = get_page_by_path( 'company' );
 setup_postdata( $post );
 ?>
-    <span class="section-title-en">Corporate Information</span>
+    <span class="section-title-en"><?php the_field('english_title'); ?></span>
     <h2 class="section-title"><?php the_title(  ); ?></h2>
     <p class="section-lead"><?php echo get_the_excerpt(  ); ?></p>
     <div class="section-buttons">
