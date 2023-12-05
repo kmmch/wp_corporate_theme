@@ -35,6 +35,11 @@ wp_nav_menu(
 ?>
               </nav>
             </div>
+            <ul class="sns-navi">
+              <li class="twitter">
+                <a href="https://twitter.com/mochiken__code" target="_blank"></a>
+              </li>
+            </ul>
           </div>
           <p class="copyright">
             <small class="copyright-text">&#169; 2023 PACIFIC MALL DEVELOPMENT CO., LTD.</small>
