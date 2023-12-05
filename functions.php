@@ -102,19 +102,24 @@ function get_main_image() {
 
 // 特定の記事を抽出する関数
 function get_specific_posts($post_type, $taxonomy = null, $term = null, $number = -1) {
-    $args = array(
-        'post_type' => $post_type,
-        'tax_query' => array(
-            array(
-                'taxonomy' => $taxonomy,
-                'field' => 'slug',
-                'terms' => $term,
-            ),
+    if ( ! $term ):
+		$terms_obj = get_terms( 'event' );
+		$term = wp_list_pluck( $terms_obj, 'slug' );
+	endif;
+
+	$args = array(
+		'post_type' => $post_type,
+		'tax_query' => array(
+			array(
+				'taxonomy' => $taxonomy,
+				'field' => 'slug',
+				'terms' => $term,
+            )
         ),
-        'posts_per_page' => $number,
+		'posts_per_page' => $number,
     );
-    $specific_posts = new WP_Query($args);
-    return $specific_posts;
+	$specific_posts = new WP_Query( $args );
+	return $specific_posts;
 }
 
 
