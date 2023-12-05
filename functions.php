@@ -84,9 +84,10 @@ add_image_size( 'search', 168, 168, true );
 
 // 各テンプレートごとのメイン画像を表示
 function get_main_image() {
-    if( is_page(  )|| is_singular( 'daily_contribution' ) ) {
+    if( is_page(  ) || is_singular( 'daily_contribution' ) ) {
         // return get_the_post_thumbnail( get_queried_object(  )->ID, 'detail' );        $attachment_id = get_field( 'main_image' );
         $attachment_id = get_field( 'main_image' );
+        var_dump($attachment_id);
         return wp_get_attachment_image( $attachment_id, 'detail' );
         // if ( is_front_page() ) {
         //     return wp_get_attachment_image( $attachment_id, 'top' );
