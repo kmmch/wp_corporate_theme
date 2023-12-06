@@ -1758,7 +1758,7 @@ input {
 	position: absolute;
 	top: 0;
 	right: 0;
-	padding: 32px 0 24px;
+	padding: 24px 0;
 	width: 100%;
 	-webkit-transition: none;
 	transition: none;
@@ -1818,6 +1818,7 @@ input {
 	-webkit-flex-direction: row;
 	-ms-flex-direction: row;
 	flex-direction: row;
+	align-items: center;
 }
 
 #header .global-nav .menu {
@@ -1837,7 +1838,7 @@ input {
 }
 
 #header .global-nav .menu-item .nav-link {
-	padding-bottom: 8px;
+	/* padding-bottom: 8px; */
 	font-size: 1.4rem;
 	color: #fff;
 	position: relative;
@@ -1986,7 +1987,7 @@ input {
 
 #header.standby {
 	position: fixed;
-	padding: 24px 0;
+	padding: 12px 0;
 	background-color: #fff;
 	-webkit-transform: translateY(-100%);
 	-ms-transform: translateY(-100%);
