@@ -15,8 +15,8 @@
       <div class="header-inner">
         <div class="logo">
           <a class="logo-header" href="<?php echo home_url(); ?>">
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/biztech/main-logo.png" class="main-logo" alt="Biz Tech" />
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/biztech/sub-logo.png" class="fixed-logo" alt="Biz Tech" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/biztech/sub-logo.png" class="main-logo" alt="Biz Tech" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/biztech/main-logo.png" class="fixed-logo" alt="Biz Tech" />
           </a>
         </div>
         <button class="toggle-menu js-toggoleNav">
