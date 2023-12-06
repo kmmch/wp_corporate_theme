@@ -13,7 +13,7 @@ endif;
           <div class="footerContents">
             <div class="footerContents-contact">
               <div class="enterprise-logo">
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/svg/logo-footer.svg" alt="PACIFIC MALL DEVELOPMENT" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/biztech/sub-logo.png" alt="Biz Tech" />
               </div>
               <div class="enterprise-detail">
                 <p class="name">Biz Tech株式会社</p>
