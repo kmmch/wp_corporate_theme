@@ -5,6 +5,7 @@ function my_enqueue_scripts() {
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'bundle_js', $url .'/assets/js/bundle.js', array() );
     wp_enqueue_style( 'my_styles', $url . '/assets/css/styles.css', [] );
+    wp_enqueue_style( 'biztech', $url . '/assets/css/biztech.css', [] );
 }
 add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 

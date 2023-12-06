@@ -56,6 +56,16 @@ if(is_front_page(  )):
         <p class="site-caption"><?php echo get_the_excerpt(  ); ?></p>
       </div>
     </section>
+    <!-- <section class="keyVisual">
+        <div class="keyVisual__body">
+            <h1 class="keyVisual__ttl">Innovate For Success.</h1>
+            <p class="keyVisual__txt"><?php echo get_the_excerpt(  ); ?></p>
+        </div>
+        <figure class="keyVisual__ph">
+            <?php echo get_main_image(); ?>
+        </figure>
+    </section> -->
+    
 <?php
 else:
 ?>
