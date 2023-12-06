@@ -52,7 +52,7 @@ if(is_front_page(  )):
     <section class="section-contents" id="keyvisual">
       <?php echo get_main_image(); ?>
       <div class="wrapper">
-        <h1 class="site-title">Innovate And Success.</h1>
+        <h1 class="site-title">Innovate For Success.</h1>
         <p class="site-caption"><?php echo get_the_excerpt(  ); ?></p>
       </div>
     </section>
