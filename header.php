@@ -15,8 +15,8 @@
       <div class="header-inner">
         <div class="logo">
           <a class="logo-header" href="<?php echo home_url(); ?>">
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/common/logo-main.svg" class="main-logo" alt="PACIFIC MALL DEVELOPMENT" />
-            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/common/logo-fixed.svg" class="fixed-logo" alt="PACIFIC MALL DEVELOPMENT" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/common/logo-main.svg" class="main-logo" alt="Biz Tech" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/common/logo-fixed.svg" class="fixed-logo" alt="Biz Tech" />
           </a>
         </div>
         <button class="toggle-menu js-toggoleNav">
@@ -52,7 +52,7 @@ if(is_front_page(  )):
     <section class="section-contents" id="keyvisual">
       <?php echo get_main_image(); ?>
       <div class="wrapper">
-        <h1 class="site-title">Connecting the future.</h1>
+        <h1 class="site-title">Innovate And Success.</h1>
         <p class="site-caption"><?php echo get_the_excerpt(  ); ?></p>
       </div>
     </section>
