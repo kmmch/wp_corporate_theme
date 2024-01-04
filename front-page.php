@@ -2,10 +2,10 @@
 <section class="section-contents" id="shop">
   <div class="wrapper">
 <?php
-$shop_obj = get_page_by_path( 'shop' );
-$post = $shop_obj;
+$business_obj = get_page_by_path( 'business' );
+$post = $business_obj;
 setup_postdata( $post );
-$shop_title = get_the_title();
+$business_title = get_the_title();
 ?>
     <span class="section-title-en"><?php the_field('english_title'); ?></span>
     <h2 class="section-title"><?php the_title(  ); ?></h2>
@@ -13,10 +13,11 @@ $shop_title = get_the_title();
 <?php wp_reset_postdata(  ); ?>
     <ul class="shops">
 <?php
-$shop_pages = get_child_pages(4, $shop_obj->ID);
-if($shop_pages->have_posts()):
-  while($shop_pages->have_posts()): $shop_pages->the_post();
+// $shop_pages = get_child_pages(4, $shop_obj->ID);
+// if($shop_pages->have_posts()):
+//   while($shop_pages->have_posts()): $shop_pages->the_post();
 ?>
+<!--
       <li class="shops-item">
         <a class="shop-link" href="<?php the_permalink(  ); ?>">
           <div class="shop-image"><?php the_post_thumbnail( 'common' ); ?></div>
@@ -29,14 +30,15 @@ if($shop_pages->have_posts()):
           </div>
         </a>
       </li>
+-->
 <?php
-  endwhile;
-  wp_reset_postdata();
-endif;
+//   endwhile;
+//   wp_reset_postdata();
+// endif;
 ?>
     </ul>
     <div class="section-buttons">
-      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( home_url( 'shop' ) ); ?>';"><?php echo $shop_title; ?>一覧を見る</button>
+      <button type="button" class="button button-ghost" onclick="javascript:location.href = '<?php echo esc_url( home_url( 'business' ) ); ?>';"><?php echo $business_title; ?>一覧を見る</button>
     </div>
   </div>
 </section>
